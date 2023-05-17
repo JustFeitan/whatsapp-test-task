@@ -1,0 +1,15 @@
+@use 'styles/normalize';
+@use 'styles/fonts/_index.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: "RF Tone Regular", sans-serif;
+  background: #f4f4f4;
+}
+

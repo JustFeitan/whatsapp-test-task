@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "./dist",
+        "target": "es6",
+        "module": "commonjs",
+        "jsx": "react",
+        "removeComments": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": ["es5", "es6", "dom", "dom.iterable"],
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@models/*":["src/models/*"],
+            "@store/*":["src/store/*"],
+            "@store":["src/store"],
+            "@helpers/*":["src/helpers/*"],
+            "@services/*":["src/services/*"],
+        }
+    },
+    "exclude": ["./node_modules/**/*"]
+}

@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  client:
+    image: client-prod-i
+    build:
+      dockerfile: Dockerfile.prod
+    container_name: client-prod-c
+    ports:
+      - '8000:80'
+    environment:
+      NODE_ENV: production

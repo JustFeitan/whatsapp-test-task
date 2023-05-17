@@ -1,0 +1,8 @@
+.message-read-status {
+  & > svg path {
+    fill: dodgerblue;
+    &:hover {
+      fill: dodgerblue;
+    }
+  }
+}

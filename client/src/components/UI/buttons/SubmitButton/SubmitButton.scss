@@ -1,0 +1,41 @@
+@use "./src/styles/variables";
+.fulfilled-btn {
+    font-family: "RF Tone Bold", sans-serif;
+    background: variables.$main-green;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    line-height: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+    &:disabled {
+        background-color: grey;
+        color: white;
+    }
+    &:hover {
+        background-color: variables.$secondary-green;
+    }
+    &:active {
+        background-color: variables.$main-green;
+    }
+}
+.outlined-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: variables.$main-green;
+    border: 1px solid variables.$main-green;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    &:disabled {
+        background-color: white;
+        color: grey;
+    }
+}

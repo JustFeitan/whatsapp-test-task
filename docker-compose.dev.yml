@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  client:
+    image: client-dev-i
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: client-dev-c
+    volumes:
+      - ./client:/client
+      - node_modules:/client/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: development
+    command: sh -c 'cd /client; npm start'
+volumes:
+  node_modules:

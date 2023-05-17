@@ -1,0 +1,12 @@
+@use './src/styles/variables';
+.header-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 25vh;
+  background-color: variables.$main-green;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: -1;
+}

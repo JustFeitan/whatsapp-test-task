@@ -1,0 +1,41 @@
+@use './src/styles/variables';
+.login {
+  &__wrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 25vh;
+    background-color: variables.$main-green;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: -1;
+  }
+
+  &__header {
+    width: 1000px;
+    margin: 27px 0 67px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &__title {
+      margin-left: 14px;
+      font-family: "The Sans Bold", sans-serif;
+      color: white;
+      font-size: 14px;
+    }
+
+  }
+
+  &__card {
+
+    &__title {
+      font-family: "RF Tone Ultraligh", sans-serif;
+      font-weight: 300;
+      font-size: 28px;
+    }
+    &__btn {
+      margin-left: auto;
+    }
+  }
+}
