@@ -1,5 +1,5 @@
 import {ChatHistory} from "@models/Notifications/ChatHistory";
-import {narrowNotificationToStatus} from "../../services/helpers";
+import {narrowNotificationToStatus} from "@services/helpers";
 import {OutgoingMessageStatus} from "@models/Notifications/OutgoingMessageStatus";
 import {useEffect, useState} from "react";
 import {NotificationTypes} from "@models/Notifications/NotificationTypes";
@@ -7,7 +7,7 @@ import {Notification} from "@models/Notifications/Notification";
 import {SendNotification} from "@models/Notifications/SendNotification";
 import {MessageTypes} from "@models/Notifications/MessageTypes";
 import {useAuth} from "../useAuth";
-import {notificationsApi} from "../../services/notificationsApi";
+import {notificationsApi} from "@services/notificationsApi";
 
 export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | Notification, chatHistory: ChatHistory[], chatId: string) => {
     const user = useAuth();
@@ -28,7 +28,7 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
                     senderId: notification.body.senderData.sender,
                     senderName: notification.body.senderData.senderName,
                 }
-                setChatMessages(prevState => [...prevState, newMessage])
+                setChatMessages(prevState => [newMessage, ...prevState])
                 break;
             case NotificationTypes.OUTGOING_API_MESSAGE_RECEIVED:
 
@@ -36,7 +36,7 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
             case NotificationTypes.OUTGOING_MESSAGE_STATUS:
                 if (!narrowNotificationToStatus(notification)) return;
                 let updatedChat: ChatHistory[];
-                if (notification.body.chatId === chatId) {
+                if (notification.body.instanceData.wid === chatId) {
                     updatedChat = chatMessages.map((message) => message.idMessage === notification.body.idMessage
                         ? ({
                             ...message,

@@ -12,6 +12,7 @@ const Modal: FC<ModalProps> = ({visible, setVisible, children, ...props}) => {
         <div
             className={visible ? `modal modal--visible` : 'modal'}
             onClick={(e) => setVisible(false)}
+            {...props}
         >
             <div
                 className="modal__wrapper"

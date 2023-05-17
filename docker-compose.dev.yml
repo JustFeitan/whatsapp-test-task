@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   client:
-    image: client-dev-i
+    image: client-dev-iq
     build:
       dockerfile: Dockerfile.dev
     container_name: client-dev-c

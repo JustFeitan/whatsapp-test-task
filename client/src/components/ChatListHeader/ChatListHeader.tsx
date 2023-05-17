@@ -34,12 +34,18 @@ const ChatListHeader: FC<ChatListHeaderProps> = ({addChat}) => {
         addChat(chatId)
     }
 
+    const onOutsideClickHandler = () => {
+        setPhoneNumber('');
+        setPhoneNumberValidationError('');
+        setNewChatModal(false)
+    }
+
     return (
 
         <div className="chats__manage__header">
             <WhatsappIcon size={39}/>
             <form noValidate onSubmit={addNewChat}>
-                <Modal visible={newChatModal} setVisible={setNewChatModal}>
+                <Modal visible={newChatModal} setVisible={setNewChatModal} onClick={onOutsideClickHandler}>
                     <Input
                         label="Введите номер телефона собеседника"
                         error={!!phoneNumberValidationError}

@@ -37,7 +37,7 @@ export const useChats = (notification: Notification | OutgoingMessageStatus | nu
     const onChatClickHandler = async (chat: SenderData) => {
         const historyChatRequest: HistoryChatRequest = {
             chatId: chat.chatId,
-            count: 10,
+            count: 40,
         }
         await getChatHistory([user, historyChatRequest])
         setCurrentChat(chat);
