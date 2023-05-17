@@ -18,8 +18,9 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
         switch (notification.body.typeWebhook) {
             case NotificationTypes.INCOMING_MESSAGE_RECEIVED:
                 if (narrowNotificationToStatus(notification)) return;
+                if (notification.body.senderData.chatId !== chatId) return;
                 const newMessage: ChatHistory = {
-                    chatId: chatId,
+                    chatId: notification.body.senderData.chatId,
                     textMessage: notification.body.messageData.textMessageData.textMessage,
                     idMessage: notification.body.idMessage,
                     timestamp: +new Date(),
@@ -40,7 +41,7 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
                     updatedChat = chatMessages.map((message) => message.idMessage === notification.body.idMessage
                         ? ({
                             ...message,
-                            statusMessage: "read"
+                            statusMessage: 'read'
                         })
                         : message
                     )
@@ -53,6 +54,8 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
                         : message
                     )
                 }
+
+
                 setChatMessages(updatedChat)
                 break;
             default:
@@ -61,7 +64,6 @@ export const useSetCurrentChatMessage = (notification: OutgoingMessageStatus | N
     }
 
     const sendNotification = async (inputMessageValue: string) => {
-
         if (!inputMessageValue) return;
         const newNotification: SendNotification = {
             chatId: chatId,
