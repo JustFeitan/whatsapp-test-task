@@ -15,10 +15,10 @@ Netify): [mini-whatsapp.netlify.app](https://mini-whatsapp.netlify.app)
 ### Без докера:
 
 1. `git clone https://github.com/JustFeitan/whatsapp-test-task.git`;
-2. `npm i`
-3. `npm start`
-4.  Перейти в дерикторию `client`
-5.  Перейти на `https://localhost:3000`
+2.  Перейти в дерикторию `client`
+3. `npm i`
+5  `npm start`
+6.  Перейти на `https://localhost:3000`
 
 ## Техническое задание:
 
