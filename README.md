@@ -9,8 +9,9 @@ Netify): [mini-whatsapp.netlify.app](https://mini-whatsapp.netlify.app)
 ### Docker:
 
 1. `git clone https://github.com/JustFeitan/whatsapp-test-task.git`;
-2. `docker-compose -f docker-compose.yml -f  docker-compose.prod.yml up`
-3. Перейти на `https://localhost:8000`
+2.  Перейти в дерикторию `whatsapp-test-task`
+3. `docker-compose -f docker-compose.yml -f  docker-compose.dev.yml up`
+4. Перейти на `https://localhost:3000`
 
 ### Без докера:
 
