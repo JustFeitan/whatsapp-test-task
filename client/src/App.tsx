@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './App.scss';
 import AppRouter from "./routing/AppRouter";
 import {useActions} from "./hooks/redux/useActions";
@@ -10,6 +10,9 @@ function App() {
         const userStorage = JSON.parse(localStorage.getItem('user'));
         setUser(userStorage);
     }
+    useEffect(() => {
+        document.title = 'WhatsApp'
+    }, [])
     return <AppRouter data-testid=''/>;
 }
 
