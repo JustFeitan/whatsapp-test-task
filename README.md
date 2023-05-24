@@ -6,6 +6,7 @@ Netify): [mini-whatsapp.netlify.app](https://mini-whatsapp.netlify.app)
 
 ## Инструкции для локального запуска:
 !!!ВАЖНО!!! Для использования возможностей требуются данные с [green-api](https://green-api.com)(idInstance, apiTokenInstance)
+
 Перед началом работы требуется выполнить следующие шаги: [https://green-api.com/docs/before-start/](https://green-api.com/docs/before-start/)
 ### Docker:
 
